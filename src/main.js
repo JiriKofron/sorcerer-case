@@ -1,8 +1,17 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import App from './App.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+
+import routes from './router/router'
 
 import { defineCustomElements as defineIonPhaser } from '@ion-phaser/core/loader';
 
-defineIonPhaser(window)
+defineIonPhaser(window);
+const pinia = createPinia();
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+})
 
-createApp(App).mount('#app')
+createApp(App).use(pinia).use(router).mount('#app')
