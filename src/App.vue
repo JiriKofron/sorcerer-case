@@ -1,15 +1,10 @@
 <template>
-  <HelloWorld msg="Sorcerer case game"/>
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
